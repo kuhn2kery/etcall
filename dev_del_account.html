@@ -1,0 +1,129 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="refresh" content="30">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="개발 환경 - 회원정보 삭제">
+	<meta property="og:description" content="개발 환경 - 회원정보 삭제">
+
+	<title>개발 환경 - 회원정보 삭제</title>
+
+<style>
+
+		.wrap {
+            margin: auto;
+    		width: 60%;
+          	margin-bottom: 0px;
+
+
+    		border: 3px solid #12BD7E;
+    		padding: 10px;
+
+           	display: flex;
+        	flex-direction: column;
+        	justify-content:space-between;
+        	align-items: center;
+      	}
+		.main {
+          	margin-top: 10px;
+        	font-size: 30px;
+
+
+      	}
+      	.sub {
+          	font-size: 15px;
+          	margin-top: 10px;
+          	margin-bottom: 30px;
+      	}
+		.content{
+			display: flex;
+        	flex-direction: column;
+        	justify-content:space-between;
+        	align-items: center;
+		}
+		.btn{
+					  border:none;
+						background-color: #12BD7E;
+					  width:100px;
+					  height:60px;
+					  border-radius:4px;
+						font-size:16px;
+						font-weight: bold;
+		}
+		.btn:hover{
+				background:#E56469;
+				font-size:23px;
+				font-weight: bolder;
+    }
+</style>
+
+<script>
+
+		function del_acc() {
+				var acc	= document.getElementById('acc').value;
+				var get_url		= 'https://api-dev.lulumedic.com/deleteUser?user_id='+acc
+				return get_url;
+
+				// if (!acc) {
+				// 			alert("계정정보를 입력해주세요");
+				// }
+				// function null_check() {
+				// 		else{
+				// 			alert(acc.value + ' 정보가 삭제되었습니다');
+				// 			location.reload();
+				// 		}
+				//
+				//
+				// 	}
+
+		}
+		// function goto_url() {
+		// 	var acc			= document.getElementById('acc').value;
+		//   var get_url		= 'https://velog.io/@gom-kery/'+acc
+		//
+		//   return get_url;
+		//
+		// }
+
+
+		// function del_complete() {
+		// 		var acc 	= document.getElementById('acc');
+		// 		if(textbox != null){
+		// 					alert(textbox.value + ' 정보가 삭제되었습니다');
+		// 					location.reload();
+		// 		}
+		//
+		// }
+
+
+		}
+
+
+	</script>
+</head>
+
+<body>
+  	<div class="wrap">
+      	<div class="main"> 계정정보 입력: </div>
+  			<div class="sub">개발 환경에서 회원 탈퇴한 계정 정보를 입력해주세요</div>
+
+		<div class="content">
+    		<form onkeydown="return event.key != 'Enter';">
+						<input type="text" id="acc" name="acc" placeholder="아이디(이메일/SNS) 입력" value="" style="height:30pt" size="30"										>
+
+						<input type="reset" style="width:50px;height:30pt" value="reset" > <p>
+  					<button type="button" class="btn" style="width:220pt;height:50pt;" onclick="document.location.href=del_acc()" >삭제 실행</button>
+				</form>
+
+		</div>
+
+		※ 입력 박스에 엔터키 동작 막혀있음. <br>
+		※ 페이지 초기화 <br>- auto : 30초 <br>- self : [reset] 클릭
+</body>
+
+
+
+
+</html>
